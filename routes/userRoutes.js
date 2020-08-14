@@ -1,16 +1,16 @@
 const express = require('express');
-const animalController = require('../controllers/animalController')
+const userController = require('../controllers/userController')
 
 const router = express.Router();
 
 router
   .route('/')
-  .get(animalController.readAnimals)
-  .post(animalController.createAnimal);
+  .get(userController.readUsers)
+  .post(userController.createUser);
 
 router
   .route('/:id')
-  .get(animalController.readAnimalById)
-  .delete(animalController.deleteAnimal);
+  .get(userController.readUserById)
+  .delete(userController.deleteUser);
 
 module.exports = router;
