@@ -17,5 +17,8 @@ describe('server.js', () => {
     it('should return a JSON object', () => {
       expect(res.type).toBe('application/json');
     })
+    it('should return { message: "Web API:Node Sprint." }', () => {
+      expect(res.body).toEqual({ message: 'Web API:Node Sprint.' });
+    })
   })
 })

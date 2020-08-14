@@ -15,8 +15,9 @@ function findById(id) {
   return db('animals').where({ id }).first();
 }
 
-function add(animal) {
-  return db('animals').insert(animal);
+async function add(animal) {
+  const [id] = await db('animals').insert(animal);
+  return await db('animals').where({ id }).first();
 }
 
 function remove(id) {
